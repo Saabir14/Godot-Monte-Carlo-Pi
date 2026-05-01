@@ -7,7 +7,7 @@ public partial class MonteCarloGPUCompute : MonteCarlo
 {
     public override int shots(int interval)
     {
-        progress = 0;
+        progress = -1;
 
         // Create rendering device
         var rd = RenderingServer.CreateLocalRenderingDevice();

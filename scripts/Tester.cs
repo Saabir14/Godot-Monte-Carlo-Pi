@@ -2,7 +2,6 @@ using Godot;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Range = Godot.Range;
 
 public partial class Tester : Node
 {
@@ -10,13 +9,13 @@ public partial class Tester : Node
     private LineEdit input;
     private BaseButton button;
     private Label text;
-    private Range progress;
+    private ProgressBar progress;
     public override void _Ready()
     {
         input = GetNode<LineEdit>("LineEdit");
         button = GetNode<Button>("Button");
         text = GetNode<Label>("Label");
-        progress = GetNode<Range>("Range");
+        progress = GetNode<ProgressBar>("Range");
 
         button.Connect(BaseButton.SignalName.Pressed, Callable.From(() => {
             Task task = new Task(() => {
@@ -50,6 +49,7 @@ public partial class Tester : Node
 
     public override void _Process(double delta)
     {
+        progress.Indeterminate = monte_carlo_script.progress == -1;
         progress.Value = monte_carlo_script.progress;
     }
 }
