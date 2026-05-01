@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cm6jiixoudwnl"]
+
+[ext_resource type="PackedScene" uid="uid://d3ebmsofy8vfy" path="res://scenes/tester.tscn" id="1_4mjw0"]
+[ext_resource type="Script" uid="uid://c35snerjuqm5f" path="res://scripts/MonteCarloMultiThreading.cs" id="2_farwy"]
+[ext_resource type="Script" uid="uid://dryqgxx11kf4a" path="res://scripts/MonteCarloGPUCompute.cs" id="3_7wvd4"]
+
+[sub_resource type="Resource" id="Resource_7wvd4"]
+script = ExtResource("2_farwy")
+metadata/_custom_type_script = "uid://c35snerjuqm5f"
+
+[sub_resource type="Resource" id="Resource_6yxwk"]
+script = ExtResource("3_7wvd4")
+metadata/_custom_type_script = "uid://dryqgxx11kf4a"
+
+[node name="Menue" type="Control" unique_id=1354058135]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1165821558]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tester" parent="HBoxContainer" unique_id=993654646 instance=ExtResource("1_4mjw0")]
+layout_mode = 2
+
+[node name="Tester2" parent="HBoxContainer" unique_id=242406910 instance=ExtResource("1_4mjw0")]
+layout_mode = 2
+monte_carlo_script = SubResource("Resource_7wvd4")
+
+[node name="Tester3" parent="HBoxContainer" unique_id=845438842 instance=ExtResource("1_4mjw0")]
+layout_mode = 2
+monte_carlo_script = SubResource("Resource_6yxwk")

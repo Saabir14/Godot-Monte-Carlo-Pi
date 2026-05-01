@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d3ebmsofy8vfy"]
+
+[ext_resource type="Script" uid="uid://4bgae01us26y" path="res://scripts/Tester.cs" id="1_mnnv6"]
+
+[node name="Tester" type="VBoxContainer" unique_id=993654646]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mnnv6")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=922860378]
+layout_mode = 2
+text = "1000000000"
+placeholder_text = "Interval"
+
+[node name="Button" type="Button" parent="." unique_id=1086176051]
+layout_mode = 2
+text = "Calc"
+
+[node name="Label" type="Label" parent="." unique_id=331142063]
+layout_mode = 2
+text = "Result"
+
+[node name="Range" type="ProgressBar" parent="." unique_id=1294591590]
+layout_mode = 2
