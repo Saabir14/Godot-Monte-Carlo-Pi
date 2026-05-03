@@ -29,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Tester" parent="HBoxContainer" unique_id=993654646 instance=ExtResource("1_4mjw0")]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 
 [node name="Tester2" parent="HBoxContainer" unique_id=242406910 instance=ExtResource("1_4mjw0")]

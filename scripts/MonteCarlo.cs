@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Diagnostics;
 
 [GlobalClass]
 public partial class MonteCarlo : Resource

@@ -26,11 +26,12 @@ float random(uint seed) {
     seed *= 0x846ca68bu;
     seed ^= seed >> 16u;
 
-    // Convert to float in [0,1)
-    // 0x3f800000 is the bit pattern for 1.0f; we keep only the mantissa bits.
+    // Convert to float in [0,1]
+    // Solution found online
+    // 0x3f800000 is the bit pattern for 1.0f; Keep only mantissa bits
     uint mantissa = seed & 0x007FFFFFu;         // keep 23 mantissa bits
     uint floatBits = mantissa | 0x3F800000u;    // set exponent to 127 (value 1.0)
-    return uintBitsToFloat(floatBits) - 1.0;    // subtract 1 -> range [0,1]
+    return uintBitsToFloat(floatBits) - 1.0;    // subtract 1 for range [0,1]
 }
     
 
